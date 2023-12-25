@@ -1,3 +1,4 @@
+import br.com.caio.screenmatch.calculo.CalculaDeTempo;
 import br.com.caio.screenmatch.modelos.Filme;
 import br.com.caio.screenmatch.modelos.Serie;
 
@@ -20,6 +21,19 @@ public class Principal {
         meuFilme.estrelasFilme();
         meuFilme.exibeFichaTecnica();
 
+        Filme novoFilme = new Filme();
+        novoFilme.setDuracaoEmMinutos(180);
+        novoFilme.setIncluidoNoPlano(true);
+        novoFilme.setAnoLancamento(2000);
+        novoFilme.setNome("Piratas do Caribe 1");
+        novoFilme.avalia(10);
+        novoFilme.avalia(5);
+        novoFilme.avalia(10);
+        novoFilme.avalia(10);
+        novoFilme.mediaAvaliacoes();
+        novoFilme.estrelasFilme();
+        novoFilme.exibeFichaTecnica();
+
         Serie serie = new Serie();
         serie.setIncluidoNoPlano(true);
         serie.setAnoLancamento(2006);
@@ -35,5 +49,11 @@ public class Principal {
         serie.estrelasFilme();
         serie.exibeFichaTecnica();
         System.out.println("Ativa: " + (serie.isAtiva() ? "Sim" : "Não"));
+
+        CalculaDeTempo calcudora = new CalculaDeTempo();
+        calcudora.inclui(meuFilme);
+        calcudora.inclui(novoFilme);
+        calcudora.inclui(serie);
+        System.out.println("Tempo estimado: " + calcudora.getTempoTotal());
     }
 }
