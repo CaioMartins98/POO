@@ -1,4 +1,4 @@
-import br.com.caio.screenmatch.calculo.CalculaDeTempo;
+import br.com.caio.screenmatch.calculo.CalculaTempo;
 import br.com.caio.screenmatch.modelos.Filme;
 import br.com.caio.screenmatch.modelos.Serie;
 
@@ -50,7 +50,7 @@ public class Principal {
         serie.exibeFichaTecnica();
         System.out.println("Ativa: " + (serie.isAtiva() ? "Sim" : "Não"));
 
-        CalculaDeTempo calcudora = new CalculaDeTempo();
+        CalculaTempo calcudora = new CalculaTempo();
         calcudora.inclui(meuFilme);
         calcudora.inclui(novoFilme);
         calcudora.inclui(serie);

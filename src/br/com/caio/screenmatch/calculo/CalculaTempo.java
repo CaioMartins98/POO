@@ -2,7 +2,7 @@ package br.com.caio.screenmatch.calculo;
 
 import br.com.caio.screenmatch.modelos.Titulo;
 
-public class CalculaDeTempo {
+public class CalculaTempo {
     private int tempoTotal;
 
     public int getTempoTotal() {
