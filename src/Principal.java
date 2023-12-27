@@ -1,4 +1,6 @@
 import br.com.caio.screenmatch.calculo.CalculaTempo;
+import br.com.caio.screenmatch.calculo.FiltroRecomendacao;
+import br.com.caio.screenmatch.modelos.Episodio;
 import br.com.caio.screenmatch.modelos.Filme;
 import br.com.caio.screenmatch.modelos.Serie;
 
@@ -18,7 +20,6 @@ public class Principal {
         meuFilme.avalia(10);
         meuFilme.avalia(10);
         meuFilme.mediaAvaliacoes();
-        meuFilme.estrelasFilme();
         meuFilme.exibeFichaTecnica();
 
         Filme novoFilme = new Filme();
@@ -31,7 +32,6 @@ public class Principal {
         novoFilme.avalia(10);
         novoFilme.avalia(10);
         novoFilme.mediaAvaliacoes();
-        novoFilme.estrelasFilme();
         novoFilme.exibeFichaTecnica();
 
         Serie serie = new Serie();
@@ -46,7 +46,6 @@ public class Principal {
         serie.avalia(10);
         serie.avalia(10);
         serie.mediaAvaliacoes();
-        serie.estrelasFilme();
         serie.exibeFichaTecnica();
         System.out.println("Ativa: " + (serie.isAtiva() ? "Sim" : "Não"));
 
@@ -55,5 +54,15 @@ public class Principal {
         calcudora.inclui(novoFilme);
         calcudora.inclui(serie);
         System.out.println("Tempo estimado: " + calcudora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio ep = new Episodio();
+        ep.setNumero(1);
+        ep.setSerie(serie);
+        ep.setTotalVisualizacoes(99);
+
+        filtro.filtra(ep);
     }
 }

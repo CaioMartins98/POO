@@ -1,6 +1,8 @@
 package br.com.caio.screenmatch.modelos;
 
-public class Serie extends Titulo{
+import br.com.caio.screenmatch.calculo.Classificacao;
+
+public class Serie extends Titulo  {
     private int minutosPorEp;
     private int temporadas;
     private int epPorTemporada;
@@ -10,6 +12,7 @@ public class Serie extends Titulo{
     public int getDuracaoEmMinutos() {
         return (temporadas * epPorTemporada * minutosPorEp);
     }
+
     public int getMinutosPorEp() {
         return minutosPorEp;
     }

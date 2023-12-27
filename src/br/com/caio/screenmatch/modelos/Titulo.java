@@ -54,9 +54,7 @@ public class Titulo {
         return somaAvaliacoes / totalAvaliacoes;
     }
 
-    public int estrelasFilme() {
-        return (int) (somaAvaliacoes / totalAvaliacoes) / 2;
-    }
+
 
     public void exibeFichaTecnica() {
         System.out.println("Nome: " + getNome());
@@ -65,7 +63,7 @@ public class Titulo {
         System.out.println("Duração: " + getDuracaoEmMinutos() + " minutos");
         System.out.println("Total de avaliações: " + getTotalAvaliacoes());
         System.out.printf("Média: " + "%.2f \n", mediaAvaliacoes());
-        System.out.println("Estrelas: " + estrelasFilme());
+//        System.out.println("Estrelas: " + estrelasFilme());
     }
 
 }
